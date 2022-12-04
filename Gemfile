@@ -34,7 +34,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
+
+# Runtime type checking with Sorbet
+gem 'sorbet-runtime'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -43,6 +46,9 @@ end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-end
+  gem "spring"
 
+  # Statically checking types with Sorbet
+  gem 'sorbet'
+  gem 'tapioca', require: false
+end
